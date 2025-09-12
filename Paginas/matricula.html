@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Matrícula - Fe y Alegría 17</title>
+  <style>
+    h1, h2{
+      text-shadow: 2ch;
+      text-align: center;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    html, body{
+      height: 100%;
+      margin: 0;
+    }
+
+    body{
+      display: flex;
+      flex-direction: column;
+    }
+
+    footer{
+      text-align: center;
+      background-color: #c62828;
+      color: #f5f5f5;
+      margin-top: auto;
+      padding: 20px;
+    }
+
+    header{
+      background-color: #c62828;
+      text-align: center;
+      padding: 10px;
+      color: #f5f5f5;
+    }
+    nav{
+      background-color:#992828;
+      padding: 10px;
+      text-align: center;
+    }
+
+    nav a{
+      text-decoration: none;
+      font-weight: bold;
+      padding: 10px;
+      color: white;
+    }
+    main{
+      max-width: 900px;
+      padding: 20px;
+      margin: auto;
+      font-size: 17px;
+      flex: 1;
+    }
+
+    main h2{
+      color:#c62828;
+    }
+
+    form{
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      max-width: 500px;
+      margin: auto;
+    }
+
+    label{
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    input, select{
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 15px;
+      width: 100%;
+    }
+
+    button{
+      background-color: #c62828;
+      color: #fff;
+      font-weight: bold;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover{
+      background-color: #992828;
+    }
+
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Colegio Fe y Alegría 17</h1>
+  </header>
+
+  <nav>
+    <a href="../index.html">Inicio</a> |
+    <a href="historia.html">Historia</a> |
+    <a href="oferta.html">Oferta educativa</a> |
+    <a href="comunidad.html">Comunidad</a> |
+    <a href="mision-vision.html">Misión y Visión</a> |
+    <a href="contacto.html">Contacto</a> |
+    <a href="galeria.html">Galería</a> |
+    <a href="matricula.html">Matricula</a>
+  </nav>
+
+  <main>
+    <h2>Formulario de Matrícula</h2>
+    <form>
+      <div>
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" placeholder="Ingrese su nombre">
+      </div>
+      <div>
+        <label for="apellido">Apellido:</label>
+        <input type="text" id="apellido" name="apellido" placeholder="Ingrese su apellido">
+      </div>
+      <div>
+        <label for="dni">DNI:</label>
+        <input type="text" id="dni" name="dni" placeholder="Ingrese su DNI">
+      </div>
+      <div>
+        <label for="correo">Correo electrónico:</label>
+        <input type="email" id="correo" name="correo" placeholder="Ingrese su correo">
+      </div>
+      <div>
+        <label for="grado">Grado:</label>
+        <select id="grado" name="grado">
+          <option>1° de Primaria</option>
+          <option>2° de Primaria</option>
+          <option>3° de Primaria</option>
+          <option>4° de Primaria</option>
+          <option>5° de Primaria</option>
+          <option>6° de Primaria</option>
+          <option>1° de Secundaria</option>
+          <option>2° de Secundaria</option>
+          <option>3° de Secundaria</option>
+          <option>4° de Secundaria</option>
+          <option>5° de Secundaria</option>
+        </select>
+      </div>
+      <div>
+        <label for="seccion">Sección:</label>
+        <input type="text" id="seccion" name="seccion" placeholder="Ingrese la sección">
+      </div>
+      <button type="submit">Enviar Matrícula</button>
+    </form>
+  </main>
+
+  <footer>
+    © 2025 IE Fe y Alegría N.° 17 – Villa El Salvador
+  </footer>
+</body>
+</html>

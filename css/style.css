@@ -211,10 +211,10 @@ margin-bottom: 1.5rem;
 .form-grid {
 grid-template-columns: 1fr;
 }
-            .form-group input,
-        .form-group select,
-        .form-group textarea {
-            width: 100%;
+.form-group input,
+.form-group select,
+.form-group textarea {
+width: 100%;
             padding: 1rem;
             border: 2px solid #e9ecef;
             border-radius: 10px;

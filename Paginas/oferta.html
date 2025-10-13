@@ -106,27 +106,27 @@
   <h2 class="section-title">Formulario de PreIngreso</h2>
   <div class="form-container">
     <form>
-      <div class="form-grip">
-        <div class="form-gruop-title">
+      <div class="form-grid">
+        <div class="form-group-title">
           <h3>Informacion del estudiante</h3>
         </div>
-        <div class="form-gruop">
+        <div class="form-group">
           <label>Nombre Completos</label> 
           <input type="text" id="student-name" name="student-name" required="">
         </div>
-        <div class="form-gruop">
+        <div class="form-group">
           <label>Apellidos Completos</label> 
           <input type="text" id="student-lastname" name="student-lastname" required="">
         </div>
-        <div class="form-gruop">
+        <div class="form-group">
           <label>DNI del estudiante</label> 
-          <input type="text" id="student-dni" name="student-dni" required="">
+          <input type="tel" id="student-dni" name="student-dni" required="">
         </div>
-        <div class="form-gruop">
+        <div class="form-group">
           <label>Fecha de nacimiento</label> 
           <input type="date" id="student-birthday" name="student-birthday" required="">
         </div>
-        <div class="form-gruop">
+        <div class="form-group">
           <label>Genero</label> 
           <select id="student-gender" name="student-gender" required="">
             <option value>Seleccionar</option>
@@ -134,7 +134,7 @@
             <option value>Femenino</option>
           </select>
         </div>
-        <div class="form-gruop">
+        <div class="form-group">
           <label>Grado a matricular</label> 
           <select id="student-grade" name="-studentgrade" required="">
             <option value>Seleccionar</option>
@@ -147,7 +147,7 @@
               <option value>Tercero grado</option>
               <option value>Cuarto grado</option>
               <option value>Quinto grado</option>
-              <option value>Sexto grado</optsion>
+              <option value>Sexto grado</option>
             </optgroup>
             <optgroup label="Educacion Secundaria">
               <option value>Primer grado</option>
@@ -158,21 +158,22 @@
             </optgroup>
           </select>
         </div>
-        <div class="form-gruop-title">
+        <div class="form-group-title">
           <h3>Informacion del Padre/Madre/Apoderado</h3>
-        <div class="form-gruop">
+        </div>
+        <div class="form-group">
           <label>Nombre Completos</label> 
           <input type="text" id="parent-name" name="parent-name" required="">
         </div>
-        <div class="form-gruop">
+        <div class="form-group">
           <label>Apellidos Completos</label> 
           <input type="text" id="parent-lastname" name="parent-lastname" required="">
         </div>
-        <div class="form-gruop">
+        <div class="form-group">
           <label>DNI del Apoderado</label> 
           <input type="text" id="parent-dni" name="parent-dni" required="">
         </div>
-        <div class="form-gruop">
+        <div class="form-group">
           <label>Relacion con el estudiante</label> 
           <select id="parent-relation" name="parent-relation" required="">
             <option value>Seleccionar</option>
@@ -185,22 +186,39 @@
             <option value>Tutor legal</option>
           </select>
         </div>
-        <div class="form-gruop">
+        <div class="form-group">
           <label>Telefono de contacto</label> 
           <input type="text" id="parent-cellphone" name="parent-cellphone" required="">
         </div>
-        <div class="form-gruop">
+        <div class="form-group">
           <label>Correo electronico</label> 
           <input type="text" id="parent-mail" name="parent-mail" required="">
         </div>
-
+        <div class="form-group-title">
+          <h3>Informacion de contacto</h3>
+        </div>
+        <div class="form-group">
+          <label>Direccion completa</label> 
+          <input type="text" id="contact-address" name="contact-address" required="">
+        </div>
+        <div class="form-group">
+          <label>Distrito</label> 
+          <input type="text" id="contact-town" name="contact-town" required="">
+        </div>
+        <div class="form-group">
+          <label>Telefono de emergencia</label> 
+          <input type="text" id="contact-cellphone" name="contact-cellphone" required="">
+        </div>
+        <div class="form-group">
+          <label>Contacto de emergia</label> 
+          <input type="text" id="contact-name" name="contact-name" required="">
         </div>
       </div>
     </form>  
 
   </div>
-
 </section>
+
 
   <footer>
     © 2025 IE Fe y Alegría N.° 17 – Villa El Salvador

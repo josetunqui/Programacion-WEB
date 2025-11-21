@@ -485,6 +485,43 @@ background-color: #ddd;
     }
 }
 
+/* ESTILOS PARA RADIO BUTTONS Y CHECKBOXES */
+input[type="radio"],
+input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    accent-color: #003366;
+    flex-shrink: 0;
+}
+
+input[type="radio"]:hover,
+input[type="checkbox"]:hover {
+    transform: scale(1.1);
+}
+
+/* Labels de radio/checkbox con mejor alineación */
+label:has(input[type="radio"]),
+label:has(input[type="checkbox"]) {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    padding: 8px 12px;
+    border-radius: 8px;
+    transition: background-color 0.2s;
+}
+
+label:has(input[type="radio"]):hover,
+label:has(input[type="checkbox"]):hover {
+    background-color: #f0f0f0;
+}
+
+label:has(input[type="radio"]:checked),
+label:has(input[type="checkbox"]:checked) {
+    background-color: #e8f0f8;
+}
+
 /* Responsive - en móviles solo mostrar el icono */
 @media (max-width: 768px) {
     .whatsapp-contacto a {

@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     
-    function activarAnimaciones() {
+    function activarAnimaciones() { 
         var elementos = document.querySelectorAll(".slide-left, .slide-right, .zoom-in, .fade-up");
 
         for (var i = 0; i < elementos.length; i++) {

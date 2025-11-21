@@ -366,3 +366,163 @@ background-color: #f2f2f2;
 .tabla-horarios tr:hover {
 background-color: #ddd; 
 }
+
+/* BOTÓN FLOTANTE DE WHATSAPP */
+.whatsapp-contacto {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.whatsapp-contacto a {
+    display: flex;
+    align-items: center;
+    background-color: #25D366;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.whatsapp-contacto a:hover {
+    background-color: #20BA5A;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+}
+
+.whatsapp-contacto img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+.whatsapp-contacto span {
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+/* ESTILOS PARA PÁGINA DE HISTORIA/INSTITUCIÓN */
+.history-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.history-block {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 60px;
+    align-items: center;
+}
+
+.history-block.reverse-layout {
+    flex-direction: row-reverse;
+}
+
+.history-content {
+    flex: 1;
+}
+
+.history-content h2 {
+    color: #003366;
+    margin-bottom: 20px;
+}
+
+.history-content p {
+    line-height: 1.8;
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+.history-image-wrapper {
+    flex: 1;
+    max-width: 500px;
+}
+
+.history-image-wrapper img {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.intro-section {
+    text-align: center;
+    padding: 60px 20px 40px;
+    background: linear-gradient(135deg, #003366 0%, #004d99 100%);
+    color: white;
+}
+
+.intro-section h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.intro-section .subtitle {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+/* Responsive para historia */
+@media (max-width: 768px) {
+    .history-block,
+    .history-block.reverse-layout {
+        flex-direction: column;
+    }
+    
+    .history-image-wrapper {
+        max-width: 100%;
+    }
+    
+    .history-image-wrapper img {
+        max-height: 300px;
+    }
+}
+
+/* Responsive - en móviles solo mostrar el icono */
+@media (max-width: 768px) {
+    .whatsapp-contacto a {
+        padding: 15px;
+        border-radius: 50%;
+    }
+    
+    .whatsapp-contacto img {
+        margin-right: 0;
+        width: 35px;
+        height: 35px;
+    }
+    
+    .whatsapp-contacto span {
+        display: none;
+    }
+    
+    /* Menú hamburguesa */
+    .menu-hamburguesa {
+        display: block !important;
+    }
+    
+    .nav-menu {
+        display: none;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: #003366;
+        width: 200px;
+        border-radius: 5px;
+    }
+    
+    .nav-menu.menu-activo {
+        display: block;
+    }
+    
+    .nav-menu li {
+        display: block;
+        margin: 10px 0;
+    }
+}

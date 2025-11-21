@@ -121,7 +121,7 @@
         </div>
         <div class="form-group">
           <label>DNI del estudiante</label> 
-          <input type="tel" id="student-dni" name="student-dni" required="">
+          <input type="text" id="student-dni" name="student-dni" maxlength="8" placeholder="8 dígitos" required="">
         </div>
         <div class="form-group">
           <label>Fecha de nacimiento</label> 
@@ -130,32 +130,32 @@
         <div class="form-group">
           <label>Genero</label> 
           <select id="student-gender" name="student-gender" required="">
-            <option value>Seleccionar</option>
-            <option value>Masculino</option>
-            <option value>Femenino</option>
+            <option value="">Seleccionar</option>
+            <option value="Masculino">Masculino</option>
+            <option value="Femenino">Femenino</option>
           </select>
         </div>
         <div class="form-group">
           <label>Grado a matricular</label> 
           <select id="student-grade" name="-studentgrade" required="">
-            <option value>Seleccionar</option>
+            <option value="">Seleccionar</option>
             <optgroup label="Educacion Inicial">
-              <option value>Inicial 5 años</option>
+              <option value="Inicial 5 años">Inicial 5 años</option>
             </optgroup>
             <optgroup label="Educacion Primaria">
-              <option value>Primer grado</option>
-              <option value>Segundo grado</option>
-              <option value>Tercero grado</option>
-              <option value>Cuarto grado</option>
-              <option value>Quinto grado</option>
-              <option value>Sexto grado</option>
+              <option value="Primer grado Primaria">Primer grado</option>
+              <option value="Segundo grado Primaria">Segundo grado</option>
+              <option value="Tercero grado Primaria">Tercero grado</option>
+              <option value="Cuarto grado Primaria">Cuarto grado</option>
+              <option value="Quinto grado Primaria">Quinto grado</option>
+              <option value="Sexto grado Primaria">Sexto grado</option>
             </optgroup>
             <optgroup label="Educacion Secundaria">
-              <option value>Primer grado</option>
-              <option value>Segundo grado</option>
-              <option value>Tercero grado</option>
-              <option value>Cuarto grado</option>
-              <option value>Quinto grado</option>
+              <option value="Primer grado Secundaria">Primer grado</option>
+              <option value="Segundo grado Secundaria">Segundo grado</option>
+              <option value="Tercero grado Secundaria">Tercero grado</option>
+              <option value="Cuarto grado Secundaria">Cuarto grado</option>
+              <option value="Quinto grado Secundaria">Quinto grado</option>
             </optgroup>
           </select>
         </div>
@@ -172,28 +172,28 @@
         </div>
         <div class="form-group">
           <label>DNI del Apoderado</label> 
-          <input type="text" id="parent-dni" name="parent-dni" required="">
+          <input type="text" id="parent-dni" name="parent-dni" maxlength="8" placeholder="8 dígitos" required="">
         </div>
         <div class="form-group">
           <label>Relacion con el estudiante</label> 
           <select id="parent-relation" name="parent-relation" required="">
-            <option value>Seleccionar</option>
-            <option value>Padre</option>
-            <option value>Madre</option>
-            <option value>Abuelo/a</option>
-            <option value>Tio/a</option>
-            <option value>Hermano/a</option>
-            <option value>Otro familiar</option>
-            <option value>Tutor legal</option>
+            <option value="">Seleccionar</option>
+            <option value="Padre">Padre</option>
+            <option value="Madre">Madre</option>
+            <option value="Abuelo/a">Abuelo/a</option>
+            <option value="Tio/a">Tio/a</option>
+            <option value="Hermano/a">Hermano/a</option>
+            <option value="Otro familiar">Otro familiar</option>
+            <option value="Tutor legal">Tutor legal</option>
           </select>
         </div>
         <div class="form-group">
           <label>Telefono de contacto</label> 
-          <input type="text" id="parent-cellphone" name="parent-cellphone" required="">
+          <input type="text" id="parent-cellphone" name="parent-cellphone" maxlength="9" placeholder="9 dígitos" required="">
         </div>
         <div class="form-group">
           <label>Correo electronico</label> 
-          <input type="text" id="parent-mail" name="parent-mail" required="">
+          <input type="email" id="parent-mail" name="parent-mail" placeholder="ejemplo@correo.com" required="">
         </div>
         <div class="form-group-title">
           <h3>Informacion de contacto</h3>
@@ -208,7 +208,7 @@
         </div>
         <div class="form-group">
           <label>Telefono de emergencia</label> 
-          <input type="text" id="contact-cellphone" name="contact-cellphone" required="">
+          <input type="text" id="contact-cellphone" name="contact-cellphone" maxlength="9" placeholder="9 dígitos" required="">
         </div>
         <div class="form-group">
           <label>Contacto de emergia</label> 
@@ -226,6 +226,7 @@
     © 2025 IE Fe y Alegría N.° 17 – Villa El Salvador
   </footer>
 
-
+  <script src="../js/formulario.js"></script>
+  <script src="../js/menu.js"></script>
 </body>
 </html>

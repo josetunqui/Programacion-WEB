@@ -1,0 +1,57 @@
+/* ESTILOS ESPECÍFICOS PARA MISION-VISION.HTML */
+
+.mv-main {
+  padding: 4rem 2rem;
+  background-color: #f9f9f9;
+}
+
+.mv-intro {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.mv-intro h1 {
+  color: #c62828;
+  font-size: 2.5rem;
+  font-family: Arial;
+}
+
+.mv-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.mv-card {
+  background: white;
+  flex: 1;
+  min-width: 300px;
+  padding: 3rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  border-top: 5px solid #c62828;
+  text-align: center;
+}
+
+.mv-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.mv-card h2 {
+  color: #c62828;
+  font-size: 2rem;
+  font-family: Arial;
+}
+
+.mv-card p {
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.6;
+  font-family: Arial;
+}
+

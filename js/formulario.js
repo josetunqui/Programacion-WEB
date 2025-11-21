@@ -6,6 +6,22 @@ document.addEventListener('DOMContentLoaded', function() {
     
     if (botonEnviar && formulario) {
         
+        // VALIDACIÓN: Solo números en DNI y teléfonos
+        var camposNumericos = [
+            document.getElementById('student-dni'),
+            document.getElementById('parent-dni'),
+            document.getElementById('parent-cellphone'),
+            document.getElementById('contact-cellphone')
+        ];
+        
+        for (var i = 0; i < camposNumericos.length; i++) {
+            if (camposNumericos[i]) {
+                camposNumericos[i].addEventListener('input', function() {
+                    this.value = this.value.replace(/[^0-9]/g, ''); // Solo números
+                });
+            }
+        }
+        
         // Control de visibilidad del campo Turno según el grado
         var selectGrado = document.getElementById('student-grade');
         var campoTurno = document.getElementById('campo-turno');
@@ -117,12 +133,19 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Si todo está completo
             if (confirm('¿Deseas enviar la solicitud de inscripción?')) {
-                alert('¡Inscripción enviada con éxito!\n\nEn breve nos contactaremos contigo.');
-                formulario.reset();
-                // Limpiar todos los mensajes de error
-                for (var k = 0; k < campos.length; k++) {
-                    quitarError(campos[k]);
-                }
+                // Mostrar notificación de éxito
+                mostrarNotificacion('✅ ¡Registro exitoso! Tu solicitud ha sido enviada correctamente.');
+                
+                // Limpiar formulario después de 2 segundos
+                setTimeout(function() {
+                    formulario.reset();
+                    // Limpiar todos los mensajes de error
+                    for (var k = 0; k < campos.length; k++) {
+                        quitarError(campos[k]);
+                    }
+                    // Ocultar turno si estaba visible
+                    if (campoTurno) campoTurno.style.display = 'none';
+                }, 2000);
             }
         });
     }
@@ -176,6 +199,24 @@ document.addEventListener('DOMContentLoaded', function() {
             return label.textContent.replace('*', '').trim();
         }
         return campo.name || campo.id || 'Campo sin nombre';
+    }
+    
+    function mostrarNotificacion(mensaje) {
+        // Crear notificación
+        var notificacion = document.createElement('div');
+        notificacion.style.cssText = 'position:fixed; top:20px; left:50%; transform:translateX(-50%); background:#4CAF50; color:white; padding:20px 30px; border-radius:8px; box-shadow:0 4px 12px rgba(0,0,0,0.3); z-index:10000; font-size:16px; font-weight:bold; text-align:center; max-width:90%;';
+        notificacion.textContent = mensaje;
+        
+        document.body.appendChild(notificacion);
+        
+        // Eliminar después de 3 segundos
+        setTimeout(function() {
+            notificacion.style.opacity = '0';
+            notificacion.style.transition = 'opacity 0.5s';
+            setTimeout(function() {
+                document.body.removeChild(notificacion);
+            }, 500);
+        }, 3000);
     }
     
 });

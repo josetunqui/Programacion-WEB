@@ -1,232 +1,292 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+  <meta charset="UTF-8">
   <link rel="stylesheet" type="text/css" href="../css/style.css"> 
   <title>Oferta educativa – IE Fe y Alegría N.° 17</title>
+  <style>
+    .modal {
+      display: none;
+      position: fixed; 
+      z-index: 1000; 
+      left: 0;
+      top: 0;
+      width: 100%; 
+      height: 100%; 
+      background-color: rgba(0,0,0,0.6);
+      animation: fadeIn 0.3s;
+    }
+    .modal-content {
+      background-color: #fff;
+      margin: 15% auto; 
+      padding: 30px;
+      border: 1px solid #888;
+      width: 90%; 
+      max-width: 400px;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      position: relative;
+      font-family: sans-serif;
+    }
+    .close-btn {
+      color: #aaa;
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .close-btn:hover { color: #000; }
+    .modal-btn {
+      background-color: #d9534f;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 15px;
+      font-size: 16px;
+    }
+    .modal-btn:hover { background-color: #c9302c; }
+    .input-error {
+      border: 2px solid #d9534f !important;
+      background-color: #fff8f8;
+    }
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+  </style>
 </head>
 <body>
   <header class="header">
-        <div class="nav-container">
-            <div class="logo">Oferta educativa</div>
-            <nav>
-                <ul class="nav-menu">
-                  <li><a href="../index.html">Inicio</a></li>
-                  <li><a href="historia.html">Institucion</a></li>
-                  <li><a href="oferta.html">Admision</a></li>
-                  <li><a href="comunidad.html">Comunidad</a></li>
-                  <li><a href="mision-vision.html">Educacion</a></li>
-                  <li><a href="contacto.html">Noticias</a></li>
-              </ul>
-          </nav>
-      </div>
+    <div class="nav-container">
+      <div class="logo">Oferta educativa</div>
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="../index.html">Inicio</a></li>
+          <li><a href="historia.html">Institucion</a></li>
+          <li><a href="oferta.html">Admision</a></li>
+          <li><a href="comunidad.html">Comunidad</a></li>
+          <li><a href="mision-vision.html">Educacion</a></li>
+          <li><a href="contacto.html">Noticias</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
   <main>
-<section id="proceso" class="section">
-  <h2 class="section-title">Proceso de Matrícula</h2>
-  <div class="process-steps">
-    <div class="step">
-      <div class="step-number">1</div>
-      <h3>Información y Consulta</h3>
-      <p>Revisa toda la información sobre nuestros programas educativos, costos y requisitos. Resuelve tus dudas contactándonos.</p>
-    </div>
-    <div class="step">
-      <div class="step-number">2</div>
-      <h3>Documentación</h3>
-      <p>Prepara y reúne todos los documentos requeridos según el nivel educativo al que deseas inscribir a tu hijo/a.</p>
-    </div>
-    <div class="step">
-      <div class="step-number">3</div>
-      <h3>Inscripción Online</h3>
-      <p>Completa el formulario de preinscripción en línea con todos los datos solicitados del estudiante y los padres.</p>
-    </div>
-    <div class="step">
-      <div class="step-number">4</div>
-      <h3>Entrevista Presencial</h3>
-      <p>Agenda una cita para la entrevista personal con el estudiante y los padres. Entrega de documentos originales.</p>
-    </div>
-    <div class="step">
-      <div class="step-number">5</div>
-      <h3>Evaluación</h3>
-      <p>El estudiante realizará una evaluación diagnóstica acorde a su nivel educativo para determinar su ubicación académica.</p>
-    </div>
-    <div class="step">
-      <div class="step-number">6</div>
-      <h3>Confirmación y Pago</h3>
-      <p>Una vez aprobado, procede con el pago de matrícula para confirmar definitivamente la vacante del estudiante.</p>
-    </div>
-  </div>
-</section>
-
-<section id="requisitos" class="section">
-  <h2 class="section-title">Requisitos por Nivel</h2>
-  <div class="requirements-grid">
-    <div class="requirement-card">
-      <h3>🧸 Educación Inicial (3-5 años)</h3>
-      <ul>
-        <li>Partida de nacimiento original</li>
-        <li>DNI del menor (original y copia)</li>
-        <li>DNI de ambos padres</li>
-        <li>Certificado de vacunas al día</li>
-        <li>Constancia de no adeudo (si viene de otro colegio)</li>
-        <li>2 fotos tamaño carnet</li>
-        <li>Ficha de matrícula completa</li>
-      </ul>
-    </div>
-    <div class="requirement-card">
-      <h3>🧸 Educación Primaria (6-11 años)</h3>
-      <ul>
-        <li>Partida de nacimiento original</li>
-        <li>DNI del menor (original y copia)</li>
-        <li>DNI de ambos padres</li>
-        <li>Certificado de vacunas al día</li>
-        <li>Constancia de no adeudo (si viene de otro colegio)</li>
-        <li>2 fotos tamaño carnet</li>
-        <li>Ficha de matrícula completa</li>
-      </ul>
-    </div>
-    <div class="requirement-card">
-      <h3>🧸 Educación Secundaria (12-17 años)</h3>
-      <ul>
-        <li>Partida de nacimiento original</li>
-        <li>DNI del menor (original y copia)</li>
-        <li>DNI de ambos padres</li>
-        <li>Certificado de vacunas al día</li>
-        <li>Constancia de no adeudo (si viene de otro colegio)</li>
-        <li>2 fotos tamaño carnet</li>
-        <li>Ficha de matrícula completa</li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="alert alert-warning">
-    <strong>⚠️ Nota Importante:</strong> Todos los documentos deben estar vigentes y en buen estado. Los certificados de otros colegios deben tener una antigüedad no mayor a 6 meses.
-  </div>
-</section>
-
-<section id ="formulario" class="section">
-  <h2 class="section-title">Formulario de PreIngreso</h2>
-  <div class="form-container">
-    <form>
-      <div class="form-grid">
-        <div class="form-group-title">
-          <h3>Informacion del estudiante</h3>
+    <section id="proceso" class="section">
+      <h2 class="section-title">Proceso de Matrícula</h2>
+      <div class="process-steps">
+        <div class="step">
+          <div class="step-number">1</div>
+          <h3>Información y Consulta</h3>
+          <p>Revisa toda la información sobre nuestros programas educativos, costos y requisitos. Resuelve tus dudas contactándonos.</p>
         </div>
-        <div class="form-group">
-          <label>Nombre Completos</label> 
-          <input type="text" id="student-name" name="student-name" required="">
+        <div class="step">
+          <div class="step-number">2</div>
+          <h3>Documentación</h3>
+          <p>Prepara y reúne todos los documentos requeridos según el nivel educativo al que deseas inscribir a tu hijo/a.</p>
         </div>
-        <div class="form-group">
-          <label>Apellidos Completos</label> 
-          <input type="text" id="student-lastname" name="student-lastname" required="">
+        <div class="step">
+          <div class="step-number">3</div>
+          <h3>Inscripción Online</h3>
+          <p>Completa el formulario de preinscripción en línea con todos los datos solicitados del estudiante y los padres.</p>
         </div>
-        <div class="form-group">
-          <label>DNI del estudiante</label> 
-          <input type="text" id="student-dni" name="student-dni" maxlength="8" placeholder="8 dígitos" required="">
+        <div class="step">
+          <div class="step-number">4</div>
+          <h3>Entrevista Presencial</h3>
+          <p>Agenda una cita para la entrevista personal con el estudiante y los padres. Entrega de documentos originales.</p>
         </div>
-        <div class="form-group">
-          <label>Fecha de nacimiento</label> 
-          <input type="date" id="student-birthday" name="student-birthday" required="">
+        <div class="step">
+          <div class="step-number">5</div>
+          <h3>Evaluación</h3>
+          <p>El estudiante realizará una evaluación diagnóstica acorde a su nivel educativo para determinar su ubicación académica.</p>
         </div>
-        <div class="form-group">
-          <label>Genero</label> 
-          <select id="student-gender" name="student-gender" required="">
-            <option value="">Seleccionar</option>
-            <option value="Masculino">Masculino</option>
-            <option value="Femenino">Femenino</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label>Grado a matricular</label> 
-          <select id="student-grade" name="-studentgrade" required="">
-            <option value="">Seleccionar</option>
-            <optgroup label="Educacion Inicial">
-              <option value="Inicial 5 años">Inicial 5 años</option>
-            </optgroup>
-            <optgroup label="Educacion Primaria">
-              <option value="Primer grado Primaria">Primer grado</option>
-              <option value="Segundo grado Primaria">Segundo grado</option>
-              <option value="Tercero grado Primaria">Tercero grado</option>
-              <option value="Cuarto grado Primaria">Cuarto grado</option>
-              <option value="Quinto grado Primaria">Quinto grado</option>
-              <option value="Sexto grado Primaria">Sexto grado</option>
-            </optgroup>
-            <optgroup label="Educacion Secundaria">
-              <option value="Primer grado Secundaria">Primer grado</option>
-              <option value="Segundo grado Secundaria">Segundo grado</option>
-              <option value="Tercero grado Secundaria">Tercero grado</option>
-              <option value="Cuarto grado Secundaria">Cuarto grado</option>
-              <option value="Quinto grado Secundaria">Quinto grado</option>
-            </optgroup>
-          </select>
-        </div>
-        <div class="form-group-title">
-          <h3>Informacion del Padre/Madre/Apoderado</h3>
-        </div>
-        <div class="form-group">
-          <label>Nombre Completos</label> 
-          <input type="text" id="parent-name" name="parent-name" required="">
-        </div>
-        <div class="form-group">
-          <label>Apellidos Completos</label> 
-          <input type="text" id="parent-lastname" name="parent-lastname" required="">
-        </div>
-        <div class="form-group">
-          <label>DNI del Apoderado</label> 
-          <input type="text" id="parent-dni" name="parent-dni" maxlength="8" placeholder="8 dígitos" required="">
-        </div>
-        <div class="form-group">
-          <label>Relacion con el estudiante</label> 
-          <select id="parent-relation" name="parent-relation" required="">
-            <option value="">Seleccionar</option>
-            <option value="Padre">Padre</option>
-            <option value="Madre">Madre</option>
-            <option value="Abuelo/a">Abuelo/a</option>
-            <option value="Tio/a">Tio/a</option>
-            <option value="Hermano/a">Hermano/a</option>
-            <option value="Otro familiar">Otro familiar</option>
-            <option value="Tutor legal">Tutor legal</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label>Telefono de contacto</label> 
-          <input type="text" id="parent-cellphone" name="parent-cellphone" maxlength="9" placeholder="9 dígitos" required="">
-        </div>
-        <div class="form-group">
-          <label>Correo electronico</label> 
-          <input type="email" id="parent-mail" name="parent-mail" placeholder="ejemplo@correo.com" required="">
-        </div>
-        <div class="form-group-title">
-          <h3>Informacion de contacto</h3>
-        </div>
-        <div class="form-group">
-          <label>Direccion completa</label> 
-          <input type="text" id="contact-address" name="contact-address" required="">
-        </div>
-        <div class="form-group">
-          <label>Distrito de residencia</label> 
-          <input type="text" id="contact-town" name="contact-town" required="">
-        </div>
-        <div class="form-group">
-          <label>Telefono de emergencia</label> 
-          <input type="text" id="contact-cellphone" name="contact-cellphone" maxlength="9" placeholder="9 dígitos" required="">
-        </div>
-        <div class="form-group">
-          <label>Contacto de emergia</label> 
-          <input type="text" id="contact-name" name="contact-name" required="">
+        <div class="step">
+          <div class="step-number">6</div>
+          <h3>Confirmación y Pago</h3>
+          <p>Una vez aprobado, procede con el pago de matrícula para confirmar definitivamente la vacante del estudiante.</p>
         </div>
       </div>
-    </form>  
-    <button class="form-button">Enviar</button>
-  </div>
-</section>
-</main>
+    </section>
 
+    <section id="requisitos" class="section">
+      <h2 class="section-title">Requisitos por Nivel</h2>
+      <div class="requirements-grid">
+        <div class="requirement-card">
+          <h3>🧸 Educación Inicial (3-5 años)</h3>
+          <ul>
+            <li>Partida de nacimiento original</li>
+            <li>DNI del menor (original y copia)</li>
+            <li>DNI de ambos padres</li>
+            <li>Certificado de vacunas al día</li>
+            <li>Constancia de no adeudo (si viene de otro colegio)</li>
+            <li>2 fotos tamaño carnet</li>
+            <li>Ficha de matrícula completa</li>
+          </ul>
+        </div>
+        <div class="requirement-card">
+          <h3>🧸 Educación Primaria (6-11 años)</h3>
+          <ul>
+            <li>Partida de nacimiento original</li>
+            <li>DNI del menor (original y copia)</li>
+            <li>DNI de ambos padres</li>
+            <li>Certificado de vacunas al día</li>
+            <li>Constancia de no adeudo (si viene de otro colegio)</li>
+            <li>2 fotos tamaño carnet</li>
+            <li>Ficha de matrícula completa</li>
+          </ul>
+        </div>
+        <div class="requirement-card">
+          <h3>🧸 Educación Secundaria (12-17 años)</h3>
+          <ul>
+            <li>Partida de nacimiento original</li>
+            <li>DNI del menor (original y copia)</li>
+            <li>DNI de ambos padres</li>
+            <li>Certificado de vacunas al día</li>
+            <li>Constancia de no adeudo (si viene de otro colegio)</li>
+            <li>2 fotos tamaño carnet</li>
+            <li>Ficha de matrícula completa</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="alert alert-warning">
+        <strong>⚠️ Nota Importante:</strong> Todos los documentos deben estar vigentes y en buen estado. Los certificados de otros colegios deben tener una antigüedad no mayor a 6 meses.
+      </div>
+    </section>
+
+    <section id="formulario" class="section">
+      <h2 class="section-title">Formulario de PreIngreso</h2>
+      <div class="form-container">
+        <form id="matriculaForm">
+          <div class="form-grid">
+            <div class="form-group-title">
+              <h3>Informacion del estudiante</h3>
+            </div>
+            <div class="form-group">
+              <label>Nombre Completos</label> 
+              <input type="text" id="student-name" name="student-name" required>
+            </div>
+            <div class="form-group">
+              <label>Apellidos Completos</label> 
+              <input type="text" id="student-lastname" name="student-lastname" required>
+            </div>
+            <div class="form-group">
+              <label>DNI del estudiante</label> 
+              <input type="tel" id="student-dni" name="student-dni" required>
+            </div>
+            <div class="form-group">
+              <label>Fecha de nacimiento</label> 
+              <input type="date" id="student-birthday" name="student-birthday" required>
+            </div>
+            <div class="form-group">
+              <label>Genero</label> 
+              <select id="student-gender" name="student-gender" required>
+                <option value="">Seleccionar</option>
+                <option value="Masculino">Masculino</option>
+                <option value="Femenino">Femenino</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Grado a matricular</label> 
+              <select id="student-grade" name="studentgrade" required>
+                <option value="">Seleccionar</option>
+                <optgroup label="Educacion Inicial">
+                  <option value="Inicial 5 años">Inicial 5 años</option>
+                </optgroup>
+                <optgroup label="Educacion Primaria">
+                  <option value="Primer grado">Primer grado</option>
+                  <option value="Segundo grado">Segundo grado</option>
+                  <option value="Tercero grado">Tercero grado</option>
+                  <option value="Cuarto grado">Cuarto grado</option>
+                  <option value="Quinto grado">Quinto grado</option>
+                  <option value="Sexto grado">Sexto grado</option>
+                </optgroup>
+                <optgroup label="Educacion Secundaria">
+                  <option value="Primer grado">Primer grado</option>
+                  <option value="Segundo grado">Segundo grado</option>
+                  <option value="Tercero grado">Tercero grado</option>
+                  <option value="Cuarto grado">Cuarto grado</option>
+                  <option value="Quinto grado">Quinto grado</option>
+                </optgroup>
+              </select>
+            </div>
+            <div class="form-group-title">
+              <h3>Informacion del Padre/Madre/Apoderado</h3>
+            </div>
+            <div class="form-group">
+              <label>Nombre Completos</label> 
+              <input type="text" id="parent-name" name="parent-name" required>
+            </div>
+            <div class="form-group">
+              <label>Apellidos Completos</label> 
+              <input type="text" id="parent-lastname" name="parent-lastname" required>
+            </div>
+            <div class="form-group">
+              <label>DNI del Apoderado</label> 
+              <input type="text" id="parent-dni" name="parent-dni" required>
+            </div>
+            <div class="form-group">
+              <label>Relacion con el estudiante</label> 
+              <select id="parent-relation" name="parent-relation" required>
+                <option value="">Seleccionar</option>
+                <option value="Padre">Padre</option>
+                <option value="Madre">Madre</option>
+                <option value="Abuelo/a">Abuelo/a</option>
+                <option value="Tio/a">Tio/a</option>
+                <option value="Hermano/a">Hermano/a</option>
+                <option value="Otro familiar">Otro familiar</option>
+                <option value="Tutor legal">Tutor legal</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Telefono de contacto</label> 
+              <input type="text" id="parent-cellphone" name="parent-cellphone" required>
+            </div>
+            <div class="form-group">
+              <label>Correo electronico</label> 
+              <input type="text" id="parent-mail" name="parent-mail" required>
+            </div>
+            <div class="form-group-title">
+              <h3>Informacion de contacto</h3>
+            </div>
+            <div class="form-group">
+              <label>Direccion completa</label> 
+              <input type="text" id="contact-address" name="contact-address" required>
+            </div>
+            <div class="form-group">
+              <label>Distrito de residencia</label> 
+              <input type="text" id="contact-town" name="contact-town" required>
+            </div>
+            <div class="form-group">
+              <label>Telefono de emergencia</label> 
+              <input type="text" id="contact-cellphone" name="contact-cellphone" required>
+            </div>
+            <div class="form-group">
+              <label>Contacto de emergia</label> 
+              <input type="text" id="contact-name" name="contact-name" required>
+            </div>
+          </div>
+          <br>
+          <button type="submit" class="form-button">Enviar</button>
+        </form>  
+      </div>
+    </section>
+  </main>
 
   <footer>
     © 2025 IE Fe y Alegría N.° 17 – Villa El Salvador
   </footer>
 
-  <script src="../js/formulario.js"></script>
-  <script src="../js/menu.js"></script>
-</body>
-</html>
+  <div id="modalError" class="modal">
+    <div class="modal-content">
+      <span class="close-btn">&times;</span>
+      <h3 style="color: #d9534f;">⚠️ Faltan Datos</h3>
+      <p>Por favor, asegúrate de rellenar todos los campos obligatorios antes de enviar el formulario.</p>
+      <button id="btnEntendido" class="modal-btn">Entendido</button>
+    </div>
+  </div>

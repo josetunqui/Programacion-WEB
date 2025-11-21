@@ -328,7 +328,32 @@ footer {
 }
 
 @media (max-width: 768px) {
-    .nav-menu { display: none; }
+    /* Mostrar botón hamburguesa solo en móvil */
+    .menu-hamburguesa {
+        display: block !important;
+    }
+    
+    /* Ocultar menú normal en móvil */
+    .nav-menu {
+        display: none;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: #003366;
+        width: 200px;
+        border-radius: 5px;
+    }
+    
+    /* Mostrar menú cuando está activo */
+    .nav-menu.menu-activo {
+        display: block;
+    }
+    
+    .nav-menu li {
+        display: block;
+        margin: 10px 0;
+    }
+    
     .hero h1 { font-size: 2.5rem; }
     .contact-card { padding: 2rem; }
     .welcome-block { padding: 2rem; }

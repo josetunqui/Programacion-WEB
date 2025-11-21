@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
         var boton = document.createElement('button');
         boton.className = 'menu-hamburguesa';
         boton.innerHTML = '☰';
-        boton.style.cssText = 'font-size:28px; background:none; border:none; color:white; cursor:pointer;';
+        boton.style.cssText = 'display:none; font-size:28px; background:none; border:none; color:white; cursor:pointer;';
         
         menu.parentElement.insertBefore(boton, menu);
         

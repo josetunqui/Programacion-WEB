@@ -133,19 +133,80 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Si todo está completo
             if (confirm('¿Deseas enviar la solicitud de inscripción?')) {
-                // Mostrar notificación de éxito
-                mostrarNotificacion('✅ ¡Registro exitoso! Tu solicitud ha sido enviada correctamente.');
+                // Recopilar todos los datos del formulario
+                var formData = new FormData(formulario);
                 
-                // Limpiar formulario después de 2 segundos
-                setTimeout(function() {
-                    formulario.reset();
-                    // Limpiar todos los mensajes de error
-                    for (var k = 0; k < campos.length; k++) {
-                        quitarError(campos[k]);
+                // Agregar el campo de turno si está visible y seleccionado
+                var turnoSeleccionado = formulario.querySelector('input[name="turno"]:checked');
+                if (turnoSeleccionado) {
+                    formData.append('turno', turnoSeleccionado.value);
+                }
+                
+                // Enviar datos al servidor PHP usando fetch
+                fetch('../php/guardar_matricula.php', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(function(response) {
+                    // Verificar si la respuesta es OK
+                    if (!response.ok) {
+                        throw new Error('Error del servidor: ' + response.status);
                     }
-                    // Ocultar turno si estaba visible
-                    if (campoTurno) campoTurno.style.display = 'none';
-                }, 2000);
+                    // Intentar parsear como JSON
+                    return response.text().then(function(text) {
+                        try {
+                            return JSON.parse(text);
+                        } catch (e) {
+                            // Si no es JSON, mostrar el texto de respuesta
+                            throw new Error('Respuesta del servidor: ' + text);
+                        }
+                    });
+                })
+                .then(function(data) {
+                    if (data.success) {
+                        // Mostrar notificación de éxito
+                        mostrarNotificacion('✅ ¡Registro exitoso! Tu solicitud ha sido enviada correctamente.');
+                        
+                        // Limpiar formulario después de 2 segundos
+                        setTimeout(function() {
+                            formulario.reset();
+                            // Limpiar todos los mensajes de error
+                            for (var k = 0; k < campos.length; k++) {
+                                quitarError(campos[k]);
+                            }
+                            // Ocultar turno si estaba visible
+                            if (campoTurno) campoTurno.style.display = 'none';
+                        }, 2000);
+                    } else {
+                        // Mostrar errores específicos si existen
+                        var mensajeError = '❌ Error: ' + (data.message || 'No se pudo guardar la matrícula');
+                        
+                        // Si hay errores específicos, mostrarlos
+                        if (data.errores && data.errores.length > 0) {
+                            mensajeError += '\n\n';
+                            for (var i = 0; i < data.errores.length; i++) {
+                                mensajeError += '• ' + data.errores[i] + '\n';
+                            }
+                        }
+                        
+                        mostrarNotificacion(mensajeError);
+                    }
+                })
+                .catch(function(error) {
+                    console.error('Error completo:', error);
+                    var mensajeError = '❌ Error al enviar los datos. ';
+                    
+                    // Mensajes más específicos según el tipo de error
+                    if (error.message.includes('Failed to fetch') || error.message.includes('NetworkError')) {
+                        mensajeError += 'No se puede conectar al servidor. ¿Está corriendo PHP?';
+                    } else if (error.message.includes('404')) {
+                        mensajeError += 'No se encontró el archivo PHP. Verifica la ruta.';
+                    } else {
+                        mensajeError += error.message || 'Por favor, intenta nuevamente.';
+                    }
+                    
+                    mostrarNotificacion(mensajeError);
+                });
             }
         });
     }

@@ -1,6 +1,9 @@
 // Validación del formulario de matrícula con mensajes específicos
 document.addEventListener('DOMContentLoaded', function() {
     
+    // *** NUEVO: Arreglo para guardar los datos visualmente ***
+    var listaMatriculados = []; 
+
     var botonEnviar = document.querySelector('.form-button');
     var formulario = document.querySelector('form');
     
@@ -166,7 +169,10 @@ document.addEventListener('DOMContentLoaded', function() {
                     if (data.success) {
                         // Mostrar notificación de éxito
                         mostrarNotificacion('✅ ¡Registro exitoso! Tu solicitud ha sido enviada correctamente.');
-                        
+
+                        // *** NUEVO: Agregar a la tabla visualmente ***
+                        agregarFilaVisual(); 
+
                         // Limpiar formulario después de 2 segundos
                         setTimeout(function() {
                             formulario.reset();
@@ -198,7 +204,10 @@ document.addEventListener('DOMContentLoaded', function() {
                     
                     // Mensajes más específicos según el tipo de error
                     if (error.message.includes('Failed to fetch') || error.message.includes('NetworkError')) {
-                        mensajeError += 'No se puede conectar al servidor. ¿Está corriendo PHP?';
+                        mensajeError += 'No se puede conectar al servidor. Se guardará localmente en la lista.';
+                        
+                        // *** NUEVO: Si no hay conexión (PHP falla), lo mostramos en la tabla igual ***
+                        agregarFilaVisual();
                     } else if (error.message.includes('404')) {
                         mensajeError += 'No se encontró el archivo PHP. Verifica la ruta.';
                     } else {
@@ -213,6 +222,32 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // funciones auxiliraes
     
+    // *** NUEVO: Función para dibujar en la tabla ***
+function agregarFilaVisual() {
+        console.log("Intentando dibujar tabla..."); 
+        var dni = document.getElementById('student-dni').value;
+        var nombre = document.getElementById('student-name').value;
+        var apellido = document.getElementById('student-lastname').value;
+        var grado = document.getElementById('student-grade').value;
+
+        var contenedor = document.getElementById('contenedor-tabla');
+        var cuerpo = document.getElementById('cuerpo-tabla');
+        
+        if (contenedor && cuerpo) {
+            contenedor.style.display = 'block';
+            
+            var tr = document.createElement('tr');
+            tr.innerHTML = 
+                '<td style="padding:10px;">' + dni + '</td>' +
+                '<td style="padding:10px;">' + nombre + ' ' + apellido + '</td>' +
+                '<td style="padding:10px;">' + grado + '</td>';
+            
+            cuerpo.appendChild(tr);
+        } else {
+            console.error("Error: No se encontró el contenedor-tabla o cuerpo-tabla en el HTML");
+        }
+    }
+
     function validarCampo(campo) {
         if (!campo.value || campo.value.trim() === '') {
             mostrarError(campo, 'Por favor, completa este campo');
@@ -266,6 +301,11 @@ document.addEventListener('DOMContentLoaded', function() {
         // Crear notificación
         var notificacion = document.createElement('div');
         notificacion.style.cssText = 'position:fixed; top:20px; left:50%; transform:translateX(-50%); background:#4CAF50; color:white; padding:20px 30px; border-radius:8px; box-shadow:0 4px 12px rgba(0,0,0,0.3); z-index:10000; font-size:16px; font-weight:bold; text-align:center; max-width:90%;';
+        
+        if (mensaje.includes('❌') || mensaje.includes('Error')) {
+             notificacion.style.background = '#ff4444'; 
+        }
+
         notificacion.textContent = mensaje;
         
         document.body.appendChild(notificacion);
@@ -275,7 +315,9 @@ document.addEventListener('DOMContentLoaded', function() {
             notificacion.style.opacity = '0';
             notificacion.style.transition = 'opacity 0.5s';
             setTimeout(function() {
-                document.body.removeChild(notificacion);
+                if (document.body.contains(notificacion)) {
+                    document.body.removeChild(notificacion);
+                }
             }, 500);
         }, 3000);
     }
